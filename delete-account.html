@@ -1,0 +1,116 @@
+from pathlib import Path
+
+html = r'''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn how to request deletion of your nebenan.de : social network account and associated data.">
+  <title>Account Deletion — nebenan.de : social network</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --primary: #0284c7;
+      --text: #172033;
+      --muted: #536174;
+      --surface: #ffffff;
+      --page: #f3f8fc;
+      --border: #dce7f0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--page);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 42px 20px;
+      text-align: center;
+    }
+    header h1 { margin: 0 0 8px; font-size: clamp(1.8rem, 4vw, 2.5rem); }
+    header p { margin: 0; opacity: .96; }
+    main {
+      width: min(860px, calc(100% - 32px));
+      margin: 32px auto 48px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: clamp(22px, 5vw, 42px);
+      box-shadow: 0 8px 28px rgba(20, 50, 80, .06);
+    }
+    h2 { margin-top: 28px; font-size: 1.25rem; }
+    h2:first-child { margin-top: 0; }
+    p, li { color: var(--muted); }
+    a { color: var(--primary); }
+    .steps {
+      padding: 18px 22px;
+      background: #f0f9ff;
+      border: 1px solid #ccecff;
+      border-radius: 12px;
+    }
+    .contact {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 12px 18px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 700;
+    }
+    .note { font-size: .92rem; }
+    footer { text-align: center; color: var(--muted); padding: 0 16px 28px; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Account Deletion</h1>
+    <p>nebenan.de : social network</p>
+  </header>
+
+  <main>
+    <h2>How to delete your account in the app</h2>
+    <p>You can delete your account directly in nebenan.de : social network by following these steps:</p>
+    <div class="steps">
+      <ol>
+        <li>Open the app and go to <strong>Settings</strong>.</li>
+        <li>Open <strong>Account Settings</strong>.</li>
+        <li>Select <strong>Delete Account</strong> and follow the on-screen instructions to confirm.</li>
+      </ol>
+    </div>
+
+    <h2>Request account deletion on the web</h2>
+    <p>If you cannot access the app, you can request account deletion by contacting our support team using the email link below. Please send the request from the email address associated with your account, if possible, and include “Account Deletion Request” in the subject. Do not send your password.</p>
+    <p><strong>Before publishing this page:</strong> replace the placeholder email address in the link below with an email inbox that your team actively monitors and uses to process deletion requests.</p>
+    <a class="contact" href="mailto:REPLACE-WITH-YOUR-SUPPORT-EMAIL@example.com?subject=Account%20Deletion%20Request">Request Account Deletion by Email</a>
+
+    <h2>What happens when you request deletion?</h2>
+    <p>We will verify the request as reasonably necessary to protect account security, then process it in accordance with our account deletion procedures and applicable requirements. We may contact you if we need information to verify that you control the account.</p>
+    <p>Account deletion is intended to remove your account and associated personal data from our active systems, subject to any data we are legally required or permitted to retain. Any retained data will be limited to the applicable purpose and retained only for the required period.</p>
+
+    <h2>Data that may be deleted</h2>
+    <p>Depending on the features you used, deletion may include your account profile and associated personal information, posts, photos, comments, and other content linked to your account, to the extent those items are controlled by your account and can be deleted under our procedures.</p>
+
+    <h2>Data retention</h2>
+    <p>Some records may need to be retained for legal, security, fraud-prevention, dispute-resolution, or compliance purposes. Where retention is required, the relevant data will be kept only as long as necessary for that purpose.</p>
+
+    <h2>Need help?</h2>
+    <p>For questions about account deletion, contact the support email linked above. We will review deletion requests and respond in accordance with our applicable procedures.</p>
+
+    <p class="note"><strong>Important:</strong> This page describes the deletion request process. Make sure the email address is correct and monitored, and ensure your actual deletion process removes the account and associated data described here before submitting this URL to Google Play.</p>
+  </main>
+
+  <footer>
+    &copy; nebenan.de : social network
+  </footer>
+</body>
+</html>
+'''
+
+path = Path("/mnt/data/delete-account.html")
+path.write_text(html, encoding="utf-8")
+print(f"Created: {path}")
